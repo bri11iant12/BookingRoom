@@ -1,0 +1,48 @@
+.specialist-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  transition: box-shadow 0.2s;
+}
+.specialist-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.specialist-card__header {
+  display: flex;
+  gap: 16px;
+}
+.specialist-card__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.specialist-card__info {
+  flex: 1;
+}
+.specialist-card__name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.specialist-card__specialty {
+  color: #666;
+  margin: 0 0 8px;
+}
+.specialist-card__meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.875rem;
+  color: #555;
+}
+.specialist-card__rating {
+  color: #f5a623;
+}
+.specialist-card__experience {
+  color: #555;
+}
+.specialist-card__description {
+  margin-top: 12px;
+  color: #333;
+  font-size: 0.95rem;
+}
