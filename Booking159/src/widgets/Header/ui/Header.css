@@ -50,25 +50,6 @@
 	gap: 0.55rem;
 }
 
-.headerNav {
-	display: flex;
-	align-items: center;
-	gap: 0.75rem;
-}
-
-.headerNavLink {
-	color: #700001;
-	text-decoration: none;
-	font-size: 0.9rem;
-	font-weight: 700;
-	padding: 0.2rem 0;
-	border-bottom: 1px solid transparent;
-}
-
-.headerNavLink:hover {
-	border-bottom-color: rgba(112, 0, 1, 0.5);
-}
-
 .ghostButton,
 .primaryButton,
 .accountButton {
@@ -77,6 +58,7 @@
 	font-size: 0.88rem;
 	font-weight: 600;
 	text-decoration: none;
+	cursor: pointer;
 	transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
@@ -108,10 +90,6 @@
 }
 
 @media (max-width: 640px) {
-	.headerNav {
-		display: none;
-	}
-
 	.logoText {
 		display: none;
 	}

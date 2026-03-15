@@ -1,5 +1,6 @@
 .home-page {
-	min-height: 100%;
+	flex: 1;
+	min-height: 0;
 	padding: clamp(1.5rem, 4vh, 3rem) 0;
 	background: #f893b2;
 	color: #700001;
@@ -87,11 +88,29 @@
 	font-size: 0.86rem;
 	font-weight: 700;
 	letter-spacing: 0.04em;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .home-page__button:hover,
 .home-page__button:focus-visible {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(112, 0, 1, 0.35);
 	filter: brightness(1.05);
+}
+
+.home-page__button:active {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(112, 0, 1, 0.25);
+	filter: brightness(1.15);
+}
+
+.home-page__button--ghost:hover,
+.home-page__button--ghost:focus-visible {
+	box-shadow: 0 8px 20px rgba(112, 0, 1, 0.2);
+}
+
+.home-page__button--ghost:active {
+	box-shadow: 0 4px 12px rgba(112, 0, 1, 0.15);
 }
 
 @media (max-width: 960px) {

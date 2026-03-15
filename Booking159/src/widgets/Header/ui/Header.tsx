@@ -31,18 +31,6 @@ export const Header = ({ logo, actions }: HeaderProps) => {
 					)}
 				</Link>
 
-				<nav className='headerNav'>
-					<Link to='/services' className='headerNavLink'>
-						Услуги
-					</Link>
-					<Link to='/masters' className='headerNavLink'>
-						Мастера
-					</Link>
-					<Link to='/' className='headerNavLink'>
-						Главная
-					</Link>
-				</nav>
-
 				<div className='actions'>
 					{actions ??
 						(isAuth ? (
