@@ -1,0 +1,73 @@
+.masters-page {
+	padding: 2.1rem 0;
+	background: #f18bab;
+	color: #700001;
+	min-height: calc(100vh - 180px);
+}
+
+.masters-page__container {
+	width: min(1200px, 92%);
+	margin: 0 auto;
+}
+
+.masters-page__title {
+	margin: 0;
+	font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.masters-page__subtitle {
+	margin: 0.7rem 0 1.2rem;
+}
+
+.masters-page__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.masters-page__card {
+	background: rgba(255, 228, 237, 0.55);
+	border: 1px solid rgba(112, 0, 1, 0.22);
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
+.masters-page__avatar {
+	width: 72px;
+	height: 72px;
+	border-radius: 0.8rem;
+	object-fit: cover;
+	border: 1px solid rgba(112, 0, 1, 0.25);
+}
+
+.masters-page__name {
+	margin: 0.75rem 0 0.2rem;
+	font-size: 1.2rem;
+}
+
+.masters-page__specialty {
+	margin: 0;
+	font-weight: 700;
+}
+
+.masters-page__meta {
+	margin: 0.45rem 0;
+	font-size: 0.9rem;
+}
+
+.masters-page__description {
+	margin: 0;
+	line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+	.masters-page__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 680px) {
+	.masters-page__grid {
+		grid-template-columns: 1fr;
+	}
+}

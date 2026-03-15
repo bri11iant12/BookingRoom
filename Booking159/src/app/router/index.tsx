@@ -4,6 +4,7 @@ import { MainLayout } from '../layouts/MainLayouts'
 import { HomePage } from '../../pages/home/ui/HomePage'
 import { ProfilePage } from '../../pages/profile/ui/ProfilePage'
 import { ServicesPage } from '../../pages/services/ui/ServicesPage'
+import { MastersPage } from '../../pages/masters/ui/MastersPage'
 
 export const router = createBrowserRouter([
 	{
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
 			{
 				path: 'services',
 				element: <ServicesPage />,
+			},
+			{
+				path: 'masters',
+				element: <MastersPage />,
 			},
 		],
 	},
