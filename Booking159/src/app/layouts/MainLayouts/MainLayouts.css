@@ -1,0 +1,14 @@
+.main-layout {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.main-layout__content {
+	flex: 1;
+}
+
+.main-layout__logo {
+	font-size: 1.25rem;
+	font-weight: 700;
+}
