@@ -1,0 +1,127 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(48, 0, 1, 0.42);
+	display: grid;
+	place-items: center;
+	padding: 1rem;
+	z-index: 80;
+}
+
+.modal {
+	position: relative;
+	width: min(460px, 100%);
+	background: #ffd2df;
+	border: 1px solid rgba(112, 0, 1, 0.25);
+	border-radius: 1rem;
+	padding: 1.2rem;
+	box-shadow: 0 24px 45px rgba(112, 0, 1, 0.28);
+	color: #620001;
+}
+
+.closeButton {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.65rem;
+	background: transparent;
+	border: none;
+	font-size: 1.5rem;
+	line-height: 1;
+	color: #700001;
+	cursor: pointer;
+}
+
+.title {
+	margin: 0 0 0.9rem;
+	font-size: 1.25rem;
+}
+
+.form {
+	display: grid;
+	gap: 0.75rem;
+}
+
+.label {
+	display: grid;
+	gap: 0.35rem;
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+.input {
+	width: 100%;
+	border: 1px solid rgba(112, 0, 1, 0.35);
+	background-color: #ffe8ef;
+	border-radius: 0.65rem;
+	padding: 0.62rem 0.72rem;
+	font-size: 0.95rem;
+	color: #4a0001;
+}
+
+.input:focus {
+	outline: 2px solid rgba(112, 0, 1, 0.26);
+	border-color: #700001;
+}
+
+.passwordWrap {
+	position: relative;
+}
+
+.passwordWrap .input {
+	padding-right: 6.2rem;
+}
+
+.toggle {
+	position: absolute;
+	top: 50%;
+	right: 0.45rem;
+	transform: translateY(-50%);
+	border: 1px solid rgba(112, 0, 1, 0.25);
+	background-color: #f9a5c0;
+	color: #700001;
+	border-radius: 999px;
+	font-size: 0.75rem;
+	padding: 0.24rem 0.6rem;
+	cursor: pointer;
+}
+
+.submit {
+	margin-top: 0.2rem;
+	border: 1px solid #700001;
+	background-color: #700001;
+	color: #ffe8ef;
+	border-radius: 0.75rem;
+	padding: 0.74rem 1rem;
+	font-size: 0.93rem;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.submit:disabled {
+	opacity: 0.8;
+	cursor: wait;
+}
+
+.error {
+	margin: 0;
+	font-size: 0.84rem;
+	color: #8f0f1d;
+}
+
+.switcher {
+	margin-top: 0.85rem;
+	display: flex;
+	gap: 0.4rem;
+	align-items: center;
+	font-size: 0.86rem;
+}
+
+.switchButton {
+	border: none;
+	background: transparent;
+	padding: 0;
+	color: #700001;
+	text-decoration: underline;
+	cursor: pointer;
+	font-weight: 700;
+}

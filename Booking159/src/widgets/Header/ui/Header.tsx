@@ -2,41 +2,78 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../model/hooks/useAuth'
 import { HeaderProps } from '../model/types'
-import styles from './Header.module.css'
+import { AuthModal } from './AuthModal'
+import './Header.css'
 
 export const Header = ({ logo, actions }: HeaderProps) => {
-	const { isAuth } = useAuth()
+	const { isAuth, user, logout } = useAuth()
+	const [authMode, setAuthMode] = React.useState<'login' | 'register' | null>(null)
+
+	React.useEffect(() => {
+		if (isAuth && authMode) {
+			setAuthMode(null)
+		}
+	}, [isAuth, authMode])
+
+	const closeModal = () => setAuthMode(null)
 
 	return (
-		<header className={styles.header}>
-			<Link to='/' className={styles.logo} aria-label='На главную'>
-				{logo ?? (
-					<>
-						<span className={styles.logoMark} aria-hidden='true'>
-							B159
-						</span>
-						<span className={styles.logoText}>Booking159</span>
-					</>
-				)}
-			</Link>
-
-			<div className={styles.actions}>
-				{actions ??
-					(isAuth ? (
-						<Link to='/profile' className={styles.accountButton}>
-							Личный кабинет
-						</Link>
-					) : (
+		<>
+			<header className='header'>
+				<Link to='/' className='logo' aria-label='На главную'>
+					{logo ?? (
 						<>
-							<Link to='/login' className={styles.ghostButton}>
-								Login
-							</Link>
-							<Link to='/register' className={styles.primaryButton}>
-								Register
-							</Link>
+							<span className='logoMark' aria-hidden='true'>
+								B159
+							</span>
+							<span className='logoText'>Booking159</span>
 						</>
-					))}
-			</div>
-		</header>
+					)}
+				</Link>
+
+				<div className='actions'>
+					{actions ??
+						(isAuth ? (
+							<>
+								<button className='accountButton' type='button'>
+									{user?.name ? `Личный кабинет: ${user.name}` : 'Личный кабинет'}
+								</button>
+								<button
+									className='ghostButton'
+									type='button'
+									onClick={() => void logout()}
+								>
+									Выйти
+								</button>
+							</>
+						) : (
+							<>
+								<button
+									className='ghostButton'
+									type='button'
+									onClick={() => setAuthMode('login')}
+								>
+									Login
+								</button>
+								<button
+									className='primaryButton'
+									type='button'
+									onClick={() => setAuthMode('register')}
+								>
+									Register
+								</button>
+							</>
+						))}
+				</div>
+			</header>
+
+			{authMode && (
+				<AuthModal
+					mode={authMode}
+					onClose={closeModal}
+					onSwitchMode={(mode) => setAuthMode(mode)}
+				/>
+			)}
+		</>
 	)
 }

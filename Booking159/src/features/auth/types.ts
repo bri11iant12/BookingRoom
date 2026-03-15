@@ -1,14 +1,20 @@
-import { User } from "../../entities/user/types";
+import { User } from '../../entities/user/types'
 
 export interface AuthState {
-    user: User | null;
-    isAuth: boolean;
-    isLoading: boolean;
-    error?: string | null;
+	user: User | null;
+	isAuth: boolean;
+	isLoading: boolean;
+	error?: string | null
 }
 
 export interface AuthActions {
-    login: (email: string, password: string) => Promise<void>;
-    logout: () => Promise<void>;
-    setUser: (user: User | null) => void;
+	login: (email: string, password: string) => Promise<void>
+	register: (
+		name: string,
+		phone: string,
+		email: string,
+		password: string
+	) => Promise<void>
+	logout: () => Promise<void>
+	setUser: (user: User | null) => void
 }

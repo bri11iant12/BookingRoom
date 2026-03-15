@@ -1,11 +1,11 @@
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
-import { AuthState, AuthActions } from '../types';
-import { User } from '../../../entities/user/types';
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
+import { AuthState, AuthActions } from '../types'
+import { User } from '../../../entities/user/types'
 
 /** Фейковые значения для проверки */
 
-const fakeLogin = async (email: string, password: string): Promise<User> => {	
+const fakeLogin = async (email: string, password: string): Promise<User> => {
 	await new Promise((resolve) => setTimeout(resolve, 500))
 
 	if (!email || !password) {
@@ -15,7 +15,26 @@ const fakeLogin = async (email: string, password: string): Promise<User> => {
 	const login = email.split('@')[0] || 'Client'
 	const normalizedName = login.charAt(0).toUpperCase() + login.slice(1)
 	return { id: '1', name: normalizedName, email }
-};
+}
+
+const fakeRegister = async (
+	name: string,
+	phone: string,
+	email: string,
+	password: string
+): Promise<User> => {
+	await new Promise((resolve) => setTimeout(resolve, 700))
+
+	if (!name || !phone || !email || !password) {
+		throw new Error('Заполните все поля')
+	}
+
+	return {
+		id: Date.now().toString(),
+		name: name.trim(),
+		email: email.trim().toLowerCase(),
+	}
+}
 /** Фейковый выход из системы */
 const fakeLogout = async (): Promise<void> => {
 	await new Promise((resolve) => setTimeout(resolve, 300))
@@ -44,6 +63,24 @@ export const useAuthStore = create<AuthStore>()(
 						error instanceof Error
 							? error.message
 							: 'Не удалось выполнить вход'
+					set({ isLoading: false, isAuth: false, error: message, user: null })
+				}
+			},
+			register: async (
+				name: string,
+				phone: string,
+				email: string,
+				password: string
+			) => {
+				set({ isLoading: true, error: null })
+				try {
+					const user = await fakeRegister(name, phone, email, password)
+					set({ user, isAuth: true, isLoading: false, error: null })
+				} catch (error) {
+					const message =
+						error instanceof Error
+							? error.message
+							: 'Не удалось выполнить регистрацию'
 					set({ isLoading: false, isAuth: false, error: message, user: null })
 				}
 			},
