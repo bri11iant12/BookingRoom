@@ -33,6 +33,7 @@ const fakeRegister = async (
 		id: Date.now().toString(),
 		name: name.trim(),
 		email: email.trim().toLowerCase(),
+		phone: phone.trim(),
 	}
 }
 /** Фейковый выход из системы */

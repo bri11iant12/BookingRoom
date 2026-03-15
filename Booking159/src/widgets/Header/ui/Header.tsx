@@ -35,9 +35,9 @@ export const Header = ({ logo, actions }: HeaderProps) => {
 					{actions ??
 						(isAuth ? (
 							<>
-								<button className='accountButton' type='button'>
+								<Link to='/profile' className='accountButton'>
 									{user?.name ? `Личный кабинет: ${user.name}` : 'Личный кабинет'}
-								</button>
+								</Link>
 								<button
 									className='ghostButton'
 									type='button'
