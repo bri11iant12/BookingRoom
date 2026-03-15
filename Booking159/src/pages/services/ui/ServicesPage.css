@@ -1,0 +1,122 @@
+.services-page {
+	padding: 2.1rem 0;
+	background: #f18bab;
+	color: #700001;
+	min-height: calc(100vh - 180px);
+}
+
+.services-page__container {
+	width: min(1200px, 92%);
+	margin: 0 auto;
+}
+
+.services-page__title {
+	margin: 0;
+	font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.services-page__subtitle {
+	margin: 0.7rem 0 1.2rem;
+	max-width: 700px;
+}
+
+.services-page__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.services-page__card {
+	background: rgba(255, 228, 237, 0.55);
+	border: 1px solid rgba(112, 0, 1, 0.22);
+	border-radius: 1rem;
+	padding: 1rem;
+	display: grid;
+	gap: 0.7rem;
+}
+
+.services-page__tag {
+	display: inline-block;
+	width: fit-content;
+	padding: 0.2rem 0.55rem;
+	border-radius: 999px;
+	background: rgba(112, 0, 1, 0.08);
+	border: 1px solid rgba(112, 0, 1, 0.3);
+	font-size: 0.72rem;
+	font-weight: 700;
+}
+
+.services-page__serviceName {
+	margin: 0;
+	font-size: 1.25rem;
+}
+
+.services-page__serviceDescription {
+	margin: 0;
+	line-height: 1.5;
+}
+
+.services-page__master {
+	display: grid;
+	grid-template-columns: 64px 1fr;
+	gap: 0.65rem;
+	align-items: center;
+}
+
+.services-page__avatar {
+	width: 64px;
+	height: 64px;
+	border-radius: 0.75rem;
+	object-fit: cover;
+	border: 1px solid rgba(112, 0, 1, 0.25);
+}
+
+.services-page__masterInfo {
+	display: grid;
+	gap: 0.2rem;
+	font-size: 0.9rem;
+}
+
+.services-page__slotsTitle {
+	margin: 0;
+	font-size: 0.9rem;
+}
+
+.services-page__slotsList {
+	list-style: none;
+	margin: 0.45rem 0 0;
+	padding: 0;
+	display: grid;
+	gap: 0.35rem;
+}
+
+.services-page__slot {
+	font-size: 0.86rem;
+	padding: 0.38rem 0.55rem;
+	border-radius: 0.55rem;
+	background: rgba(255, 255, 255, 0.36);
+	border: 1px dashed rgba(112, 0, 1, 0.25);
+}
+
+.services-page__bookButton {
+	margin-top: 0.2rem;
+	border: 1px solid #700001;
+	background: #700001;
+	color: #ffe8ef;
+	border-radius: 999px;
+	padding: 0.62rem 0.9rem;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+	.services-page__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 680px) {
+	.services-page__grid {
+		grid-template-columns: 1fr;
+	}
+}
