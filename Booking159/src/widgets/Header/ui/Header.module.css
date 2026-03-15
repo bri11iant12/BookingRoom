@@ -1,18 +1,97 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.95rem clamp(1rem, 4vw, 2.5rem);
+	background: rgba(255, 255, 255, 0.86);
+	border-bottom: 1px solid rgba(112, 0, 1, 0.15);
+	backdrop-filter: blur(10px);
+	position: sticky;
+	top: 0;
+	z-index: 30;
 }
 
-.header-logo img {
-  height: 40px;
-  width: 40px;
+.logo {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.7rem;
+	text-decoration: none;
+	color: #700001;
 }
 
-.header-actions {
-  display: flex;
-  gap: 1rem;
+.logoMark {
+	width: 2.15rem;
+	height: 2.15rem;
+	border-radius: 0.7rem;
+	display: grid;
+	place-items: center;
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	background: linear-gradient(135deg, #f893b2, #ffd4e2);
+	color: #700001;
+	border: 1px solid rgba(112, 0, 1, 0.25);
+}
+
+.logoText {
+	font-size: 1.05rem;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+}
+
+.ghostButton,
+.primaryButton,
+.accountButton {
+	padding: 0.6rem 1rem;
+	border-radius: 999px;
+	font-size: 0.88rem;
+	font-weight: 600;
+	text-decoration: none;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.ghostButton {
+	color: #700001;
+	border: 1px solid rgba(112, 0, 1, 0.35);
+	background-color: transparent;
+}
+
+.primaryButton,
+.accountButton {
+	color: #fff;
+	background-color: #700001;
+	border: 1px solid #700001;
+}
+
+.ghostButton:hover,
+.primaryButton:hover,
+.accountButton:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 8px 16px rgba(112, 0, 1, 0.2);
+}
+
+.ghostButton:active,
+.primaryButton:active,
+.accountButton:active {
+	transform: translateY(0);
+	opacity: 0.92;
+}
+
+@media (max-width: 640px) {
+	.logoText {
+		display: none;
+	}
+
+	.ghostButton,
+	.primaryButton,
+	.accountButton {
+		padding: 0.52rem 0.84rem;
+		font-size: 0.82rem;
+	}
 }

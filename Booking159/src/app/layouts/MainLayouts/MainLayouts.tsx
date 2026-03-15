@@ -7,7 +7,7 @@ import './MainLayouts.css'
 export const MainLayout: React.FC = () => {
 	return (
 		<div className='main-layout'>
-			<Header logo={<span className='main-layout__logo'>Booking159</span>} />
+			<Header />
 			<main className='main-layout__content'>
 				<Outlet />
 			</main>
