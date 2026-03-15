@@ -54,7 +54,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 		return null
 	}, [mode, password, confirmPassword])
 
-	const handleSubmit = async (event: React.FormEvent) => {
+	const handleSubmit = async (event: React.SyntheticEvent<HTMLFormElement>) => {
 		event.preventDefault()
 		setLocalError(null)
 
